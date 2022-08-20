@@ -2,7 +2,12 @@ const EXPLORADOR = "Liinc";
 let bolsaDeItens = [];
 let energia = 5;
 let moedas = 0;
-let recompensas = ["chave", "Duck, O pato De Borracha", "Moeda", "Moeda","Moeda", "Moeda", "Moeda"];
+let recompensas = ["chave", "grama", "pedra","madeira", "Moeda", "Moeda","Moeda", "Moeda", "Moeda", "Moeda", "Moeda", "Moeda", "Moeda"];
+
+console.log("TUTORIAL para iniciar a aventura comece com: CONSOLE.LOG( 'nome da função'())")
+console.log("            ")
+console.log("FUNÇÕES: explorar, taverna, batalha, abrir bau")
+console.log("            ")
 
 function taverna() {
 console.log("O explorador, " + EXPLORADOR + " entrou na taverna!");
@@ -11,6 +16,7 @@ console.log("O explorador, " + EXPLORADOR + " entrou na taverna!");
   while(energia < 5){
    energia++
     console.log("O explorador, " + EXPLORADOR + " está bebendo!");
+    console.log("Energia: "+ energia +"/5")
   }
  if(energia === 5){
      console.log( "O explorador, " + EXPLORADOR + " está revitalizado!");
@@ -25,7 +31,7 @@ function pegarItem(item){
     moedas+1
   }
   else{
-console.log("O explorador, " + EXPLORADOR + " ganhou um item!");
+console.log("O explorador, " + EXPLORADOR + " ganhou um item");
    bolsaDeItens.push(item);
   }
 }
@@ -41,8 +47,9 @@ console.log("O explorador, " + EXPLORADOR + " encontrou uma criatura misteriosa!
   else{
 console.log("O explorador, " + EXPLORADOR + " derrotou o monstro!");
   energia--
+  console.log("Energia: "+ energia +"/5")
   if(energia === 0){
-console.log("O explorador, " + EXPLORADOR + "está cansado! então precisou fugir para a taverna!");
+console.log("O explorador, " + EXPLORADOR + " está cansado! então precisou fugir para a taverna!");
     return false
    }
     return true
@@ -54,7 +61,6 @@ function explorar(){
     
   if(energia < 1){
    console.log("O explorador, " + EXPLORADOR + " está muito cansado, não poderá explorar nada agora!");
-    
     taverna()
      return false
   }
@@ -69,12 +75,15 @@ function explorar(){
    }
 
 function abrirBau(){
-
- if(bolsaDeItens.indexOf("chave")==="chave"){
-  console.log("Parabéns, você finalmente abriu o baú, é perigoso lá fora, leve seu certificado!");
+console.log("forçando a tranca...")
+ 
+if(bolsaDeItens.indexOf("chave")=== 0){
+  console.log("Parabéns, você finalmente abriu o baú!");
    return true
  }
   else{ 
+    console.log("Que pena, não foi dessa vez!")
+    console.log("tente novamente depois de explorar mais!")
   return false
   }
 }
